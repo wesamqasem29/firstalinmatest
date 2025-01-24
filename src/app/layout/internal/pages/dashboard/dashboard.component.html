@@ -1,0 +1,983 @@
+<div [ngClass]="isDialogOpen?'':''" class="sm:hidden min-h-screen bg-[#eeeff2] pb-10 no-scrollbar ">
+    <navbar></navbar> 
+
+    <div class="w-full bg-[#eeeff2]">
+
+        <div class="w-full bg-cover bg-center  items-start justify-center" style="background-image: url('assets/bg.png'); height: 500px; background-position: center -86px;">
+            <div class="p-[40px] h-[184px] text-white font-[Merriweather]">
+                <div class="text-[15px] text-[#FFFFFF] font-inter h-[22px]">Tuesday, 24 September</div>
+                <div class="mt-2 text-[48px] font-normal">Welcome back, <span id="123" class="sam font-bold">Wesam</span></div>
+            </div>
+      
+            <div class="flex px-8 w-full gap-x-8">
+                <div class="bg-white rounded-2xl p-[40px] w-4/6 ">
+                    <div class="flex justify-between">
+                        <div class="">
+                            <div class="text-[15px] text-[#71757F]">{{'Consolidated Balance of SAR accounts'}}</div>
+                            <div class="flex">
+                                <div class="text-[40px] pr-3 font-semibold text-[#1D2433]">134,590,293<span class="text-[24px]">.32</span></div>
+                                <div class="relative my-auto">
+                                    <div 
+                                      class="cursor-pointer border w-[113px] flex justify-center h-[56px] font-semibold text-[20px] border-[#DCDCDCB2] items-center px-[20px] py-[18px] rounded-[12px] gap-1" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2;"
+                                      >
+                                     {{'SAR'}}
+                                     <span class="w-[24px] flex justify-center h-[24px]">
+                                         <img class="p-1" src="assets/grayarrow.svg" alt="">
+                                     </span>
+                                    </div>
+
+
+                                    <!-- (click)="toggleDropdown()" -->
+                                    <!-- <div *ngIf="isDropdownOpen" class="absolute mt-1 w-32 bg-white border   rounded-md" >
+                                      <div 
+                                        *ngFor="let currency of currencies" 
+                                        class="px-4 py-2 text-[20px] hover:bg-gray-100 cursor-pointer"
+                                        (click)="selectCurrency(currency)">
+                                        {{ currency }}
+                                      </div>
+                                    </div> -->
+                                  </div>
+                                </div>
+                        </div>
+                        
+                        <div class="flex items-end">
+                            <button (click)="openDialog()" class="bg-[#3388E0] text-[16px] text-white w-[116px] h-[56px] rounded-lg px-4 py-3 font-semibold	">Transfer</button>
+                        </div>
+                    </div>
+
+
+  <div
+  class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50"
+  *ngIf="isDialogOpen"
+>
+  <div class="bg-[#FFFFFF] rounded-[12px] max-w-md w-full p-[24px]" style="box-shadow: 0px 2px 8px 0px #0000001F;">
+    <h2 class="text-[20px] font-inter font-semibold">Dismiss Card Issuance</h2>
+    <p class="text-[16px] text-[#76797C] my-[24px]">
+      You can still issue the card from the Accounts & cards option in the top menu.
+    </p>
+    <div class="flex justify-end gap-x-[24px] h-[56px]">
+      <button
+        class="bg-[#3388E0] text-[#FFFFFF] font-inter font-semibold rounded-[12px] text-[16px] px-[24px] py-[18px]"
+        (click)="closeDialog()"
+      >
+        Cancel
+      </button>
+      <button
+        class=" text-[#1D2433] font-inter font-semibold rounded-[12px] text-[16px] px-[24px] py-[18px]" style="background: linear-gradient(180deg, #FFFFFF 48.44%, #F5F4F4 100%); box-shadow: 0px 1px 1px 0px #DCDCDCB2; border: 1px solid #E6E7EA;"
+        (click)="proceedWithDismiss()"
+      >
+        Proceed with dismiss
+      </button>
+    </div>
+  </div>
+</div>
+
+    
+    
+                    <div class="flex gap-x-5 mt-9">
+
+                        <div class="w-full border p-[20px] rounded-xl">
+                            <div><img class="bg-[#eeeff2] rounded-md p-2" src="assets/upleft.svg" alt=""></div>
+                            <div class="mt-5">
+                             <div class="text-sm text-[#71757F] flex gap-x-1 my-auto">Outflows <span class="my-auto"><img class="my-auto" src="assets/infogray.svg" alt=""></span></div>
+                             <div class="text-[18px] font-semibold">-2,590,293<span class="text-[15px]">.80</span> SAR</div>
+                            </div>
+                         </div>
+                        
+    
+                        <div class="w-full border p-[20px] rounded-xl">
+                            <div><img class="bg-[#eeeff2] rounded-md p-2" src="assets/upleft.svg" alt=""></div>
+                            <div class="mt-5">
+                             <div class="text-sm text-[#71757F] flex gap-x-1 my-auto">Outflows <span class="my-auto"><img class="my-auto" src="assets/infogray.svg" alt=""></span></div>
+                             <div class="text-[18px] font-semibold">-2,590,293<span class="text-[15px]">.80</span> SAR</div>
+                            </div>
+                         </div>
+     
+    
+                         <div class="w-full border p-[20px] rounded-xl">
+                            <div><img class="bg-[#eeeff2] rounded-md p-2" src="assets/bank.svg" alt=""></div>
+                            <div class="mt-5">
+                             <div class="text-sm text-[#71757F]">Financing and deposits</div>
+                             <div class="text-[18px] font-semibold">-2,590,293<span class="text-[15px]">.80</span> SAR</div>
+                            </div>
+                         </div>
+                        
+                    </div>
+    
+    
+                </div>
+    
+                <div class="bg-white rounded-2xl p-9 w-2/6 h-[374px]">
+                    <div class="flex justify-between font-semibold pb-4">
+                        <div class="text-[20px] font-bold font-[Merriweather]">Pending Approvals</div>
+                        <div class="text-[20px] text-[#3388E0] font-semibold cursor-pointer">See all approvals</div>
+                    </div>
+    
+                    <div class="w-full my-auto border h-[72px] border-[#E6E7EA] bg-[#FFFFFF] rounded-[12px] py-2 px-3 mb-4 flex justify-between animate-pulse" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2;">
+                        <div class="my-auto w-3/4">
+                            <div class="h-[15px] bg-gray-200 rounded-md mb-2"></div>
+                            <div class="h-[12px] bg-gray-200 rounded-md"></div>
+                        </div>
+                        <div class="my-auto">
+                            <img class="h-4" src="assets/rightarrow.svg" alt="">
+                        </div>
+                    </div>
+
+                    <!-- <div class="w-full my-auto border h-[72px] border-[#E6E7EA] bg-[#FFFFFF] rounded-[12px] py-2 px-3 mb-4 flex justify-between" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2;">
+                        <div class="my-auto">
+                            <div class="text-[15px] font-semibold">Bulk Fund Transfer</div>
+                            <div class="text-[#71757F] text-[12px]">SADAD Bills - inquiry  . 31/10/2023 by Ahmed Abdullah </div>
+                        </div>
+                        <div class="my-auto">
+                            <img class="h-4" src="assets/rightarrow.svg" alt="">
+                        </div>
+                    </div> -->
+                    
+                    <div class="w-full my-auto border h-[72px] border-[#E6E7EA] bg-[#FFFFFF] rounded-[12px] py-2 px-3 mb-4 flex justify-between" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2;">
+                        <div class="my-auto">
+                            <div class="text-[15px] font-semibold">Bulk Fund Transfer</div>
+                            <div class="text-[#71757F] text-[12px]">SADAD Bills - inquiry  . 31/10/2023 by Ahmed Abdullah </div>
+                        </div>
+                        <div class="my-auto">
+                            <img class="h-4" src="assets/rightarrow.svg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="w-full my-auto border h-[72px] border-[#E6E7EA] bg-[#FFFFFF] rounded-[12px] py-2 px-3 mb-4 flex justify-between" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2;">
+                        <div class="my-auto">
+                            <div class="text-[15px] font-semibold">Bulk Fund Transfer</div>
+                            <div class="text-[#71757F] text-[12px]">SADAD Bills - inquiry  . 31/10/2023 by Ahmed Abdullah </div>
+                        </div>
+                        <div class="my-auto">
+                            <img class="h-4" src="assets/rightarrow.svg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        <div class="flex gap-x-8 px-8 pt-8 bg-[#eeeff2]">
+            <div class="w-1/4">
+                <div class=" bg-white rounded-2xl p-7">
+                    <div class="text-[20px] text-[#1D2433] font-bold pb-2 font-[Merriweather]">Notification <span class="bg-[#C62222] px-1 font-sans font-normal text-[14px] rounded-[4px] text-[#fff]">2</span></div>
+    
+                    <!-- <div class="animate-pulse">
+                        <div class="flex items-center mb-2">
+                            <div class="w-4 h-4 bg-gray-200 rounded-full mr-2"></div>
+                            <div class="h-[14px] bg-gray-200 rounded-md w-3/4"></div>
+                        </div>
+                        <div class="h-[12px] bg-gray-200 rounded-md w-1/2"></div>
+                    </div> -->
+
+                    <hr class="my-2">
+                    <div class="cursor-pointer" (click)="viewNotification()"><div class="text-[14px] text-[#1D2433] font-semibold flex my-auto"><img class="my-auto mr-2" src="assets/reddot.svg" alt=""> SDB Card Issuance eligibility </div>
+                    <div class="text-[#71757F] text-[12px]">19/10/2023, 12:56 by Alinma Bank</div></div>
+                    <hr class="my-2">
+                    <div class="cursor-pointer"><div class="text-[14px] text-[#1D2433] font-semibold flex my-auto"><img class="my-auto mr-2" src="assets/reddot.svg" alt=""> Bill #213 has been paid </div>
+                    <div class="text-[#71757F] text-[12px]">19/10/2023, 12:56 by Adam Smith</div></div>
+                    <hr class="my-2">
+                    <div class="cursor-pointer"><div class="text-[14px] text-[#1D2433] font-semibold flex my-auto"><img class="my-auto mr-2" src="assets/reddot.svg" alt=""> Bill #213 has been paid </div>
+                    <div class="text-[#71757F] text-[12px]">19/10/2023, 12:56 by Adam Smith</div></div>
+
+                    <div class="font-semibold text-[16px] text-center text-[#3388E0] mt-4 cursor-pointer">See All</div>
+                </div>
+
+
+
+                <div class=" bg-white rounded-2xl p-5 mt-7">
+                    <div class="text-[20px] font-[Merriweather] font-bold pb-2">Payments statistics</div>
+    
+                    <div class="my-3 animate-pulse">
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="h-4 bg-gray-200 rounded-md w-1/4"></div>
+                            <div class="h-4 w-4 bg-gray-200 rounded-full"></div>
+                        </div>
+                        <div class="flex items-baseline">
+                            <div class="h-[20px] bg-gray-200 rounded-md w-1/2"></div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="my-3">
+                        <div class="text-[12px] flex text-[#71757F]"> Local transfers <img class="pl-2 my-auto" src="assets/infowhite.svg" alt=""></div>
+                        <div class="text-[#1D2433] text-[20px] font-semibold">429,293<span class="text-[16px]">.80</span> SAR</div>
+                    </div>
+                    
+                    <div class="my-3">
+                        <div class="text-[12px] flex text-[#71757F]"> Local transfers <img class="pl-2 my-auto" src="assets/infowhite.svg" alt=""></div>
+                        <div class="text-[#1D2433] text-[20px] font-semibold">429,293<span class="text-[16px]">.80</span> SAR</div>
+                    </div>
+                    
+                    <div class="my-3">
+                        <div class="text-[12px] flex text-[#71757F]"> Local transfers <img class="pl-2 my-auto" src="assets/infowhite.svg" alt=""></div>
+                        <div class="text-[#1D2433] text-[20px] font-semibold">429,293<span class="text-[16px]">.80</span> SAR</div>
+                    </div>
+                    
+                </div>
+
+
+                <div class=" bg-white rounded-2xl p-5 pr-9 mt-7">
+                    <div class="text-[20px] font-[Merriweather] font-bold pb-2">Beneficiares</div>
+    
+                    <div class="relative my-2 border bg-[#FFFFFF] border-[#E6E7EA] p-4 rounded-[12px] animate-pulse">
+                        <div class="flex h-[14px] bg-gray-200 rounded-md w-3/4 mb-2"></div>
+                        <div class="h-[12px] bg-gray-200 rounded-md w-1/2 mb-2"></div>
+                        <div class="h-[12px] bg-gray-200 rounded-md w-1/2 mb-2"></div>
+                        <div class="h-[12px] bg-gray-200 rounded-md w-1/2"></div>
+                        <div class="absolute top-1/2 right-[-20px] bg-gray-200 border-[#E6E7EA] transform -translate-y-1/2 flex items-center justify-center border rounded-md w-[48px] h-[48px]"></div>
+                    </div>
+                    
+                    
+                    <div class="relative my-2 border bg-[#FFFFFF] border-[#E6E7EA] p-4 rounded-[12px]">
+                        <div class="flex font-semibold text-[14px] text-[#1D2433]">Flying Bisons sp. z o.o</div>
+                        <div class="text-[12px] font-normal text-[#71757F] ">43 1034 (...) 3782 1991</div>
+                        <div class="text-[12px] mt-2 text-[#71757F]">Bank of America</div>
+                        <div class="text-[12px] text-[#71757F]">Local Bank • Western Union</div>
+                        <div class="absolute top-1/2 right-[-20px] bg-[#FFFFFF] border-[#E6E7EA] transform -translate-y-1/2 flex items-center justify-center border rounded-md p-[16px] w-[48px] h-[48px]">
+                            <img class=" cursor-pointer outline-none hover:bg-transparent hover:ring-0 hover:shadow-none hover:outline-none" style="background: transparent;" src="assets/corss.svg">
+                        </div>
+                    </div>
+
+                    <div class="relative my-2 border bg-[#FFFFFF] border-[#E6E7EA] p-4 rounded-[12px]">
+                        <div class="flex font-semibold text-[14px] text-[#1D2433]">Flying Bisons sp. z o.o</div>
+                        <div class="text-[12px] font-normal text-[#71757F] ">43 1034 (...) 3782 1991</div>
+                        <div class="text-[12px] mt-2 text-[#71757F]">Bank of America</div>
+                        <div class="text-[12px] text-[#71757F]">Local Bank • Western Union</div>
+                        <div class="absolute top-1/2 right-[-20px] bg-[#FFFFFF] border-[#E6E7EA] transform -translate-y-1/2 flex items-center justify-center border rounded-md p-[16px] w-[48px] h-[48px]">
+                            <img class=" cursor-pointer outline-none hover:bg-transparent hover:ring-0 hover:shadow-none hover:outline-none" style="background: transparent;" src="assets/corss.svg">
+                        </div>
+                    </div>
+
+                    <div class="font-semibold text-[16px] text-center text-[#3388E0] mt-4 cursor-pointer">See All</div>
+                </div>
+
+
+                <div class=" bg-white rounded-2xl p-5 mt-7">
+                    <div class="text-[20px] text-[#1D2433] font-bold pb-2 font-[Merriweather]">Shortcuts</div>
+    
+                    <div class="my-3 border border-[#E6E7EA] font-semibold px-[20px] py-[18px] rounded-[12px] text-[16px]" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2; background: linear-gradient(180deg, #FFFFFF 48.44%, #F5F4F4 100%);">
+                            Transfers
+                    </div>
+                    <div class="my-3 border border-[#E6E7EA] font-semibold px-[20px] py-[18px] rounded-[12px] text-[16px]" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2; background: linear-gradient(180deg, #FFFFFF 48.44%, #F5F4F4 100%);">
+                        Offers
+                </div>
+                <div class="my-3 border border-[#E6E7EA] font-semibold px-[20px] py-[18px] rounded-[12px] text-[16px]" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2; background: linear-gradient(180deg, #FFFFFF 48.44%, #F5F4F4 100%);">
+                    Payroll
+            </div>
+                    <div class="my-3 border border-dashed p-3 bg-[#FFFFFF] flex font-semibold justify-center text-[16px] border-[#3388E0] text-[#3388E0] gap-x-3 rounded-lg text-center">
+                        <img src="assets/addblue.svg" alt="">
+                        Add shortcut
+                    </div>
+   
+                </div>  
+
+
+                <div class=" bg-white rounded-2xl p-5 mt-7">
+                    <div class="text-[20px] font-bold pb-2 font-[Merriweather]">Discover our products</div>
+    
+                    <div class="grid grid-cols-2">
+
+                        <div class="border border-[#EEEFF2] px-[16px] py-[20px] h-[128px] w-[128px] bg-[#FFFFFF] rounded-[12px] animate-pulse">
+                            <div class="flex justify-center py-2">
+                                <div class="bg-gray-200 p-6 rounded-md"></div>
+                            </div>
+                            <div class="h-[13px] bg-gray-200 rounded-md w-3/4 mx-auto"></div>
+                            <div class="h-[13px] mt-2 bg-gray-200 rounded-md w-2/4 mx-auto"></div>
+                        </div>
+                        
+
+                        <div class="border border-[#EEEFF2] px-[16px] py-[20px] h-[128px] w-[128px] bg-[#FFFFFF] rounded-[12px]">
+                            <div class="flex justify-center  py-2">
+                                <img class="bg-[#F6F7F9] p-1 rounded-md" src="assets/file2.svg" alt="">                                   
+                            </div>
+                            <div class="text-center font-semibold text-[13px]">Point of Sale service</div>
+                        </div>
+
+                        <div class="border border-[#EEEFF2] px-[16px] py-[20px] h-[128px] w-[128px] bg-[#FFFFFF] rounded-[12px]">
+                            <div class="flex justify-center  py-2">
+                                <img class="bg-[#F6F7F9] p-1 rounded-md" src="assets/file2.svg" alt="">                                   
+                            </div>
+                            <div class="text-center font-semibold text-[13px]">Point of Sale service</div>
+                        </div>
+
+                        <div class="border border-[#EEEFF2] px-[16px] py-[20px] h-[128px] w-[128px] bg-[#FFFFFF] rounded-[12px]">
+                            <div class="flex justify-center  py-2">
+                                <img class="bg-[#F6F7F9] p-1 rounded-md" src="assets/file2.svg" alt="">                                   
+                            </div>
+                            <div class="text-center font-semibold text-[13px]">Point of Sale service</div>
+                        </div>
+
+                        <div class="font-semibold text-[16px] text-center text-[#3388E0] mt-4 cursor-pointer">See All</div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center gap-x-3 text-[#1D2433] text-[16px] font-semibold mt-4">
+                    <img src="assets/settings.svg" alt="">
+                    Customize dashboard
+                </div>
+
+
+
+            </div>
+
+
+            <div class="w-3/4">
+                <div class="bg-white rounded-2xl p-7">
+                    <div class="flex justify-between">
+                        <div>
+                            <div class="text-[28px] font-bold font-[Merriweather]">Main account</div>
+                            <div class="text-[#71757F] text-[12px]">90 1020 4580 0000 1202 0121 2331</div>
+                        </div>
+
+                        <div class="flex gap-x-3">
+                            
+                                <div class="border p-3 rounded-lg flex justify-between">
+                                    <div>
+                                        <div>Main account</div>
+                                        <div class="text-gray-500">240,000,239.29 SAR . Current acco...</div>
+                                    </div>
+                                    <img class="pl-2" src="assets/grayarrow.svg" alt="">
+                                </div>
+                            
+
+                            
+                                <div class="border p-3 rounded-lg flex justify-between">
+                                    <div>
+                                        <div>Main account</div>
+                                        <div class="text-gray-500">240,000,239.29 SAR . Current acco...</div>
+                                    </div>
+                                    <img class="pl-2" src="assets/grayarrow.svg" alt="">
+                                </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="mt-5 border p-5 rounded-lg">
+                        <img class="w-full" src="assets/tepmchart.svg" alt="">
+
+                        <div class="pt-6 flex justify-between">
+                            <div class="text-[20px] text-[#1D2433] font-[Merriweather] font-bold ">Last transactions</div>
+                            <div class="text-[16px] font-semibold text-[#3388E0]">See full history</div>
+                        </div>
+
+                        <div class="text-gray-500 text-sm mt-3 mb-5">2/02/2023</div>
+
+                        <div class="flex ">
+                            <div class="w-1/3 flex gap-x-3"><img class="bg-[#eeeff2] h-[40px] w-[40px] rounded-[12px] p-[8px]" src="assets/upleft.svg" alt="">
+                            <div>
+                                <div class="text-[15px] text-[#1D2433] font-semibold">Zina International Company</div>
+                                <div class="text-[#71757F] text-[13px] font-normal">Payment of invoice number 380/2022</div>
+                            </div>
+                            </div>
+                            
+                            <div class="w-1/3 pl-5">
+                                <div class="text-[15px] text-[#1D2433] font-normal">From <span class="font-semibold ">Main Account</span></div>
+                                <div class="text-[#71757F] text-[13px]">Local transfer</div>
+                            </div>
+                            <div class=" w-1/3 justify-end flex  my-auto gap-x-3">
+                                <div class="text-[#288608] text-[15px]">1,000.00 SAR</div>
+                                 <div class="h-[24px] w-[24px]"><img class="bg-[#eeeff2] p-1 rounded-full" src="assets/grayarrow.svg" alt=""></div>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="flex mt-5">
+                            <div class="w-1/3 flex gap-x-3"><img class="bg-[#eeeff2] h-[40px] w-[40px] rounded-[12px] p-[8px]" src="assets/downright.svg" alt="">
+                            <div>
+                                <div class="text-[15px] text-[#1D2433] font-semibold">Novotel Hotel</div>
+                                <div class="text-[#71757F] text-[13px] font-normal">Payment of invoice number 380/2022</div>
+                            </div>
+                            </div>
+                            
+                            <div class="w-1/3 pl-5">
+                                <div class="text-[15px] text-[#1D2433] font-normal">From <span class="font-semibold ">Main Account</span></div>
+                                <div class="text-[#71757F] text-[13px]">Local transfer</div>
+                            </div>
+                            <div class=" w-1/3 justify-end flex  my-auto gap-x-3">
+                                <div class="text-[#1D2433] text-[15px]">-2,500.00 USD</div>
+                                 <div class="h-[24px] w-[24px]"><img class="bg-[#eeeff2] p-1 rounded-full" src="assets/grayarrow.svg" alt=""></div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                </div>
+
+                <div class="bg-white rounded-2xl p-7 mt-7">
+                    <div class="flex justify-between">
+                        <div class="text-[28px] text-[#1D2433] font-[Merriweather] font-bold">Your accounts</div>
+                        <div class="text-[#3388E0] text-[16px] font-semibold cursor-pointer">See all accounts</div>
+                    </div>
+
+                    <div class="w-full mt-3 pb-6">
+
+                        
+                            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                    <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                    </svg>
+                                </div>
+                                <input type="search" id="default-search" class="block w-full outline-none placeholder:text-[16px] px-3 h-[56px] ps-10 text-sm text-gray-900 border border-[#E6E7EA] rounded-[12px] " placeholder="Search by alias, account number, IBAN" required />
+                            </div>
+                        
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <accountcard [isSkelton]="true" [accountNumber]="'90 1020 4580 0000 1202 0121 2331'" [total]="'290,291.98'" [accountType]="'Account for small expenses'" [icon]="'assets/bank.svg'" [currency]="'SAR'"></accountcard>
+                        <accountcard [accountNumber]="'90 1020 4580 0000 1202 0121 2331'" [total]="'290,291.98'" [accountType]="'Account for small expenses'" [icon]="'assets/bank.svg'" [currency]="'SAR'"></accountcard>
+                        <accountcard [accountNumber]="'90 1020 4580 0000 1202 0121 2331'" [total]="'290,291.98'" [accountType]="'Account for small expenses'" [icon]="'assets/bank.svg'" [currency]="'SAR'"></accountcard>
+                        <accountcard [accountNumber]="'90 1020 4580 0000 1202 0121 2331'" [total]="'290,291.98'" [accountType]="'Account for small expenses'" [icon]="'assets/bank.svg'" [currency]="'SAR'"></accountcard>
+                    </div>
+                      
+
+                    
+                </div>
+
+                <div class="bg-white rounded-2xl p-7 mt-7">
+                    <div class="flex justify-between">
+                        <div class="text-[28px] font-bold font-[Merriweather]">Your cards</div>
+                        <div class="text-[#3388E0] text-[16px] font-semibold cursor-pointer">See all cards</div>
+                    </div>
+
+                    <div class="w-full mt-3">
+                            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                    </svg>
+                                </div>
+                                <input type="search" id="default-search" class="block w-full p-3 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg " placeholder="Search by nickname. card holder, card number" required />
+                            </div>       
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6 py-6">
+                        <cardbox [isSkelton]="true" [status]="'Available funds'" [total]="'14,500.35'" [currency]="'SAR'" [cardType]="'Expensed card'" [details]="'International business trips   ·  Jason Green'" [icon]="'assets/bank.svg'"></cardbox>
+                        <cardbox [status]="'Available funds'" [total]="'14,500.35'" [currency]="'SAR'" [cardType]="'Expensed card'" [details]="'International business trips   ·  Jason Green'" [icon]="'assets/bank.svg'"></cardbox>
+                        <cardbox [status]="'Available funds'" [total]="'14,500.35'" [currency]="'SAR'" [cardType]="'Expensed card'" [details]="'International business trips   ·  Jason Green'" [icon]="'assets/bank.svg'"></cardbox>
+                        <cardbox [status]="'Available funds'" [total]="'14,500.35'" [currency]="'SAR'" [cardType]="'Expensed card'" [details]="'International business trips   ·  Jason Green'" [icon]="'assets/bank.svg'"></cardbox>
+                    </div>
+                      
+
+                    
+                </div>
+
+                <div class="bg-white rounded-2xl p-7 mt-7">
+                    <div class="flex justify-between">
+                        <div class="text-[28px] text-[#1D2433] font-[Merriweather] font-bold">SADAD Bills list</div>
+                        <div class="text-[#3388E0] my-auto text-[16px] font-semibold cursor-pointer">See all bills</div>
+                    </div>
+
+                    <div class="w-full mt-3">
+                            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                    </svg>
+                                </div>
+                                <input type="search" id="default-search" class="block w-full h-[56px] p-3 ps-10 text-sm text-gray-900 border outline-none border-[#E6E7EA] rounded-[12px]" placeholder="Search by nickname, category, company, account number, status..." required />
+                            </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-6 py-6">
+                        <billslist [isSkelton]="true" [currency]="'SAR'" [total]="'100.00'" [details]="'4246 00(...) 4444 ·  Due date 09.10.2023  ·  Category'" [name]="'ABC Company  ·  Electrocity bill #221'" [icon]="'assets/stc.svg'"></billslist>
+                        <billslist [currency]="'SAR'" [total]="'100.00'" [details]="'4246 00(...) 4444 ·  Due date 09.10.2023  ·  Category'" [name]="'ABC Company  ·  Electrocity bill #221'" [icon]="'assets/stc.svg'"></billslist>
+                        <billslist [currency]="'SAR'" [total]="'100.00'" [details]="'4246 00(...) 4444 ·  Due date 09.10.2023  ·  Category'" [name]="'ABC Company  ·  Electrocity bill #221'" [icon]="'assets/stc.svg'"></billslist>
+                        <billslist [currency]="'SAR'" [total]="'100.00'" [details]="'4246 00(...) 4444 ·  Due date 09.10.2023  ·  Category'" [name]="'ABC Company  ·  Electrocity bill #221'" [icon]="'assets/stc.svg'"></billslist>
+                    </div>
+                      
+
+                    
+                </div>
+            </div>
+        </div>
+
+
+        <div class="pt-14 bg-[#eeeff2] px-7 mb-[-60px]">
+            <div style="background-color: white !important;" class="bg-white rounded-xl flex overflow-hidden">
+                <div class="w-[45%]">
+                    <img class="" src="assets/car.png" alt="">
+                </div>
+                <div class="w-[55%] bg-white flex justify-center items-center">
+                   <div class="w-[65%] text-[32px] text-[#1D2433] font-semibold">
+                    <div>
+                        The Auto-    finance from Alinma Bank
+                    </div>
+                    <div class="text-[14px] font-normal text-[#1D2433CC] py-3" >
+                        Get opportunity to obtain a car of your choice with the possibility of owning it at the end of the contract through easy and convenient procedures with unique features.
+                       </div>
+
+                       <div>
+                        <button class="bg-[#3388E0] w-[115px] h-[48px] text-center my-auto items-center flex text-white rounded-[8px] py-[16px] px-[20px] text-[14px] font-semibold">Read more</button>
+                       </div>
+                   </div>
+                   
+                </div>
+
+            </div>  
+        </div>
+
+
+        <div>
+            <footer [customStyle]="'h-[280px]'"></footer>
+        </div>
+    
+      </div>
+      
+    
+    </div>
+    
+</div>
+
+
+<!-- ******************************************************************************************************************* -->
+
+
+<div class="lg:hidden min-h-screen bg-[#eeeff2]" style="background-color: #eeeff2 !important;">
+   <navbar></navbar>
+
+   <div class="w-full bg-cover bg-[#eeeff2] h-full bg-center items-start justify-center" style="background-image: url('assets/bg.png'); height: 270px;">
+    <div class="text-[#FFFFFF] py-[16px] pl-[24px] font-merriweather">
+        <div class="text-[28px] font-normal">
+            Welcome back, <div class="font-bold">Wesam</div>
+        </div>
+    </div>
+
+    <div class="px-[16px]"> 
+        <div class="bg-white rounded-2xl p-[24px] pb-[32px] w-full ">
+                <div class="flex justify-between">
+                    <div>
+                        <div class="text-[14px] text-[#71757F]">Total balance</div>
+                        <div class="text-[24px] pr-3 font-semibold text-[#1D2433]">134,590,293<span class="text-[18px]">.32</span></div>
+                    </div>
+
+                    <div class="relative my-auto">
+                        <div 
+                          class="cursor-pointer border w-[93px] flex justify-center h-[48px] font-semibold text-[20px] border-[#DCDCDCB2] items-center px-[16px] py-[14px] rounded-[12px] gap-1" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2;"
+                          >
+                         SAR
+                         <span class="w-[24px] flex justify-center h-[24px]">
+                             <img class="p-1" src="assets/grayarrow.svg" alt="">
+                         </span>
+                        </div>
+                      </div>
+                        
+                </div>
+
+                <div class="w-[291px] mt-[16px]">
+                   <hr class="border-[#E6E7EA]">
+                </div>
+
+
+            <div class="mt-[16px]">
+
+                <div class="flex">
+                    <div class="h-[40px] w-[40px] my-auto"><img class="bg-[#eeeff2] rounded-md p-[8px]" src="assets/upleft.svg" alt=""></div>
+                    <div class="my-auto pl-[16px]">
+                     <div class="text-[12px] text-[#71757F] flex gap-x-1 my-auto">Outflows</div>
+                     <div class="text-[18px] font-semibold">-2,590,293<span class="text-[15px]">.80</span> SAR</div>
+                    </div>
+                 </div>
+
+                 <div class="flex mt-[16px]">
+                    <div class="h-[40px] w-[40px] my-auto"><img class="bg-[#eeeff2] rounded-md p-[8px]" src="assets/upleft.svg" alt=""></div>
+                    <div class="my-auto pl-[16px]">
+                     <div class="text-[12px] text-[#71757F] flex gap-x-1 my-auto">Outflows</div>
+                     <div class="text-[18px] font-semibold">-2,590,293<span class="text-[15px]">.80</span> SAR</div>
+                    </div>
+                 </div>
+                
+                 <div class="flex mt-[16px]">
+                    <div class="h-[40px] w-[40px] my-auto"><img class="bg-[#eeeff2] rounded-md p-[8px]" src="assets/bank.svg" alt=""></div>
+                    <div class="my-auto pl-[16px]">
+                     <div class="text-[12px] text-[#71757F] flex gap-x-1 my-auto">Financing and deposits</div>
+                     <div class="text-[18px] font-semibold">-2,590,293<span class="text-[15px]">.80</span> SAR</div>
+                    </div>
+                 </div>
+
+                
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="bg-[#eeeff2] px-[16px] mt-[24px]">
+        <div class="bg-white rounded-2xl p-[24px] pb-[32px] w-full">
+            <div class="flex justify-between font-semibold pb-[16px]">
+                <div class="text-[20px] font-bold font-[Merriweather]">Approvals</div>
+                <div class="text-[16px] text-[#3388E0] font-semibold cursor-pointer">View all</div>
+            </div>
+    
+            <div class="w-full my-auto border h-[92px] border-[#E6E7EA] bg-[#FFFFFF] rounded-[12px] py-2 px-[20px] mb-4 flex justify-between" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2;">
+                <div class="my-auto">
+                    <div class="text-[15px] font-semibold">Bulk Fund Transfer</div>
+                    <div class="text-[#71757F] text-[12px]">SADAD Bills - inquiry</div>  
+                    <div class="text-[#71757F] text-[12px]">31/10/2023 by Ahmed Abdullah </div>
+                </div>
+                <div class="my-auto">
+                    <img class="h-4" src="assets/rightarrow.svg" alt="">
+                </div>
+            </div>
+            
+            <div class="w-full my-auto border h-[92px] border-[#E6E7EA] bg-[#FFFFFF] rounded-[12px] py-2 px-[20px] mb-4 flex justify-between" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2;">
+                <div class="my-auto">
+                    <div class="text-[15px] font-semibold">Bulk Fund Transfer</div>
+                    <div class="text-[#71757F] text-[12px]">SADAD Bills - inquiry</div>  
+                    <div class="text-[#71757F] text-[12px]">31/10/2023 by Ahmed Abdullah </div>
+                </div>
+                <div class="my-auto">
+                    <img class="h-4" src="assets/rightarrow.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="w-full my-auto border h-[92px] border-[#E6E7EA] bg-[#FFFFFF] rounded-[12px] py-2 px-[20px] mb-4 flex justify-between" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2;">
+                <div class="my-auto">
+                    <div class="text-[15px] font-semibold">Bulk Fund Transfer</div>
+                    <div class="text-[#71757F] text-[12px]">SADAD Bills - inquiry</div>  
+                    <div class="text-[#71757F] text-[12px]">31/10/2023 by Ahmed Abdullah </div>
+                </div>
+                <div class="my-auto">
+                    <img class="h-4" src="assets/rightarrow.svg" alt="">
+                </div>
+            </div>
+    
+        </div>
+       </div>
+
+
+    <div class="bg-[#eeeff2] px-[16px] pt-[24px]">
+        <div class=" bg-white rounded-2xl p-[24px] pb-[32px]">
+            <div class="text-[20px] font-bold pb-2 font-[Merriweather]">Discover our products</div>
+    
+            <div class="grid grid-cols-2">
+    
+                <!-- <div class="border border-[#EEEFF2] px-[16px] py-[20px] h-[128px] w-[128px] bg-[#FFFFFF] rounded-[12px] animate-pulse">
+                    <div class="flex justify-center py-2">
+                        <div class="bg-gray-200 p-6 rounded-md"></div>
+                    </div>
+                    <div class="h-[13px] bg-gray-200 rounded-md w-3/4 mx-auto"></div>
+                    <div class="h-[13px] mt-2 bg-gray-200 rounded-md w-2/4 mx-auto"></div>
+                </div> -->
+
+                <div class="border border-[#EEEFF2] px-[16px] py-[20px] h-[128px] w-[128px] bg-[#FFFFFF] rounded-[12px]">
+                    <div class="flex justify-center  py-2">
+                        <img class="bg-[#F6F7F9] p-1 rounded-md" src="assets/file2.svg" alt="">                                   
+                    </div>
+                    <div class="text-center font-semibold text-[13px]">Point of Sale service</div>
+                </div>
+                
+    
+                <div class="border border-[#EEEFF2] px-[16px] py-[20px] h-[128px] w-[128px] bg-[#FFFFFF] rounded-[12px]">
+                    <div class="flex justify-center  py-2">
+                        <img class="bg-[#F6F7F9] p-1 rounded-md" src="assets/file2.svg" alt="">                                   
+                    </div>
+                    <div class="text-center font-semibold text-[13px]">Point of Sale service</div>
+                </div>
+    
+                <div class="border border-[#EEEFF2] px-[16px] py-[20px] h-[128px] w-[128px] bg-[#FFFFFF] rounded-[12px]">
+                    <div class="flex justify-center  py-2">
+                        <img class="bg-[#F6F7F9] p-1 rounded-md" src="assets/file2.svg" alt="">                                   
+                    </div>
+                    <div class="text-center font-semibold text-[13px]">Point of Sale service</div>
+                </div>
+    
+                <div class="border border-[#EEEFF2] px-[16px] py-[20px] h-[128px] w-[128px] bg-[#FFFFFF] rounded-[12px]">
+                    <div class="flex justify-center  py-2">
+                        <img class="bg-[#F6F7F9] p-1 rounded-md" src="assets/file2.svg" alt="">                                   
+                    </div>
+                    <div class="text-center font-semibold text-[13px]">Point of Sale service</div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bg-[#eeeff2] pt-[16px]">
+        <div class="bg-white rounded-t-2xl pt-[32px] px-[16px] pb-[2px]">
+            <div class="flex justify-between">
+
+                <div class="w-full">
+                    
+                        <div class="border py-[16px] px-[20px] w-full rounded-lg flex justify-between">
+                            <div>
+                                <div>Main account</div>
+                                <div class="text-gray-500">240,000,239.29 SAR . Current acco...</div>
+                            </div>
+                            <img class="" src="assets/grayarrow.svg" alt="">
+                        </div>
+                    
+
+                    
+                        <div class="border py-[16px] mt-[12px] px-[20px] w-full rounded-lg flex justify-between">
+                            <div class="text-[#1D2433] text-[14px] font-inter">
+                                30/11/2022 - 28/05/2023
+                            </div>
+                            <img class="" src="assets/grayarrow.svg" alt="">
+                        </div>
+
+                        <button  class="text-[#1D2433] py-[18px] mt-[12px] px-6 text-[16px] font-semibold rounded-[12px] items-center justify-center flex gap-x-[8px] w-full disabled:text-[#A2A6AE]"
+                        style="border: 1px solid #E6E7EA; box-shadow: 0px 1px 1px 0px #DCDCDCB2; background: linear-gradient(180deg, #FFFFFF 48.44%, #F5F4F4 100%);">
+                            Cashflow analysis
+                         <span class="my-auto">
+                            <svg class="my-auto" width="19" height="12" viewBox="0 0 19 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.1829 1.22345C12.3066 0.901203 12.6681 0.740246 12.9903 0.863946L17.9414 2.76448C18.2636 2.88818 18.4246 3.2497 18.3009 3.57195L16.4004 8.52301C16.2767 8.84526 15.9151 9.00621 15.5929 8.88251C15.2706 8.75881 15.1097 8.3973 15.2334 8.07505L16.5932 4.53265L15.6878 4.93578C13.6434 5.84598 12.0863 7.39664 11.1459 9.24706C11.0552 9.42551 10.8845 9.54972 10.6868 9.58113C10.4891 9.61255 10.2883 9.54737 10.1467 9.40582L7 6.25907L1.81694 11.4421C1.57286 11.6862 1.17714 11.6862 0.933058 11.4421C0.688981 11.1981 0.688981 10.8023 0.933058 10.5582L6.55806 4.93325C6.67527 4.81604 6.83424 4.75019 7 4.75019C7.16576 4.75019 7.32473 4.81604 7.44194 4.93325L10.4469 7.93825C11.5308 6.17065 13.1426 4.70068 15.1793 3.79384L16.0848 3.39072L12.5424 2.03092C12.2201 1.90722 12.0592 1.54571 12.1829 1.22345Z" fill="#1D2433" fill-opacity="0.65"/>
+                                </svg>
+                                
+                               
+                         </span>
+                         </button>
+
+                    
+                </div>
+            </div>
+
+            
+
+            <div class="pt-[16px] pb-[32px]">
+                <div class="pl-[20px] pr-[16px] flex justify-between">
+                    <div class="text-[20px] text-[#1D2433] font-[Merriweather] font-bold ">Last transactions</div>
+                    <div class="text-[14px] font-semibold text-[#3388E0]">View all</div>
+                </div>
+
+                <!-- <div class="text-gray-500 text-sm mt-3 mb-5">2/02/2023</div> -->
+
+                <div class="flex pt-[16px] ">
+                    <div class="w-2/3 flex">
+                        <img class="bg-[#eeeff2] p-[8px] rounded-[8px] h-[36px]" src="assets/upleft.svg" alt="">
+                        
+                    <div class="pl-[12px]">
+                        <div class="text-[13px] font-inter text-[#1D2433] font-semibold text-ellipsis whitespace-nowrap">Zina International Comp ...</div>
+                        <div class="text-[#71757F] text-[13px] font-normal text-ellipsis font-inter whitespace-nowrap">Payment of invoice numb...</div>
+                    </div>
+                    </div>
+                    
+                    <!-- <div class="w-1/3 pl-5">
+                        <div class="text-[15px] text-[#1D2433] font-normal">From <span class="font-semibold ">Main Account</span></div>
+                        <div class="text-[#71757F] text-[13px]">Local transfer</div>
+                    </div> -->
+                    <div class=" w-1/3   my-auto gap-x-3">
+                        <div class="text-[#288608] text-end text-[15px]">1,000.00 SAR</div>
+                        <div class="text-[#71757F] text-[13px] text-end font-normal font-inter">2/02/2023</div>
+                    </div>
+                </div>
+
+                <div class="flex pt-[16px] ">
+                    <div class="w-2/3 flex">
+                        <img class="bg-[#eeeff2] p-[8px] rounded-[8px] h-[36px]" src="assets/upleft.svg" alt="">
+                        
+                    <div class="pl-[12px]">
+                        <div class="text-[13px] font-inter text-[#1D2433] font-semibold text-ellipsis whitespace-nowrap">Zina International Comp ...</div>
+                        <div class="text-[#71757F] text-[13px] font-normal text-ellipsis font-inter whitespace-nowrap">Payment of invoice numb...</div>
+                    </div>
+                    </div>
+                    
+                    <!-- <div class="w-1/3 pl-5">
+                        <div class="text-[15px] text-[#1D2433] font-normal">From <span class="font-semibold ">Main Account</span></div>
+                        <div class="text-[#71757F] text-[13px]">Local transfer</div>
+                    </div> -->
+                    <div class=" w-1/3   my-auto gap-x-3">
+                        <div class="text-[#288608] text-end text-[15px]">1,000.00 SAR</div>
+                        <div class="text-[#71757F] text-[13px] text-end font-normal font-inter">2/02/2023</div>
+                    </div>
+                </div>
+
+                <div class="flex pt-[16px] ">
+                    <div class="w-2/3 flex">
+                        <img class="bg-[#eeeff2] p-[8px] rounded-[8px] h-[36px]" src="assets/upleft.svg" alt="">
+                        
+                    <div class="pl-[12px]">
+                        <div class="text-[13px] font-inter text-[#1D2433] font-semibold text-ellipsis whitespace-nowrap">Zina International Comp ...</div>
+                        <div class="text-[#71757F] text-[13px] font-normal text-ellipsis font-inter whitespace-nowrap">Payment of invoice numb...</div>
+                    </div>
+                    </div>
+                    
+                    <!-- <div class="w-1/3 pl-5">
+                        <div class="text-[15px] text-[#1D2433] font-normal">From <span class="font-semibold ">Main Account</span></div>
+                        <div class="text-[#71757F] text-[13px]">Local transfer</div>
+                    </div> -->
+                    <div class=" w-1/3   my-auto gap-x-3">
+                        <div class="text-[#288608] text-end text-[15px]">1,000.00 SAR</div>
+                        <div class="text-[#71757F] text-[13px] text-end font-normal font-inter">2/02/2023</div>
+                    </div>
+                </div>
+
+                <div class="flex mt-[16px]">
+                    <div class="w-2/3 flex">
+                        <img class="bg-[#eeeff2] p-[8px] rounded-[8px] h-[36px]" src="assets/upleft.svg" alt="">
+                        
+                    <div class="pl-[12px]">
+                        <div class="text-[13px] font-inter text-[#1D2433] font-semibold text-ellipsis whitespace-nowrap">Zina International Comp ...</div>
+                        <div class="text-[#71757F] text-[13px] font-normal text-ellipsis font-inter whitespace-nowrap">Payment of invoice numb...</div>
+                    </div>
+                    </div>
+                    
+                    <!-- <div class="w-1/3 pl-5">
+                        <div class="text-[15px] text-[#1D2433] font-normal">From <span class="font-semibold ">Main Account</span></div>
+                        <div class="text-[#71757F] text-[13px]">Local transfer</div>
+                    </div> -->
+                    <div class=" w-1/3   my-auto gap-x-3">
+                        <div class="text-[#288608] text-end text-[15px]">1,000.00 SAR</div>
+                        <div class="text-[#71757F] text-[13px] text-end font-normal font-inter">2/02/2023</div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            
+
+        </div>
+    </div>
+
+
+    <div class="bg-[#eeeff2]">
+        <div class="pt-[32px] pb-[16px] pr-[16px] pl-[20px] flex justify-between">
+            <div class="font-merriweather font-bold text-[20px] text-[#1D2433]">Your accounts</div>
+            <div class="text-[14px] font-semibold text-[#3388E0]">View all</div>
+        </div>
+
+        <div class="px-[16px] overflow-x-auto whitespace-nowrap scrollbar-hidden">
+            <div class="flex space-x-[16px]"> 
+              <accountcard
+                [accountNumber]="'12 (..)  0121 2789'"
+                [total]="'12,345,244.98'"
+                [accountType]="'International transactions'"
+                [icon]="'assets/bank.svg'"
+                [currency]="'USD'"
+              ></accountcard>
+              <accountcard
+                [accountNumber]="'12 (..)  0121 2789'"
+                [total]="'12,345,244.98'"
+                [accountType]="'International transactions'"
+                [icon]="'assets/bank.svg'"
+                [currency]="'USD'"
+              ></accountcard>
+              <accountcard
+                [accountNumber]="'12 (..)  0121 2789'"
+                [total]="'12,345,244.98'"
+                [accountType]="'International transactions'"
+                [icon]="'assets/bank.svg'"
+                [currency]="'USD'"
+              ></accountcard>
+              <accountcard
+                [accountNumber]="'12 (..)  0121 2789'"
+                [total]="'12,345,244.98'"
+                [accountType]="'International transactions'"
+                [icon]="'assets/bank.svg'"
+                [currency]="'USD'"
+              ></accountcard>
+            </div>
+          </div>
+          
+    </div>
+
+
+
+    <div class="bg-[#eeeff2] pb-[32px]">
+        <div class="pt-[32px] pb-[16px] pr-[16px] pl-[20px] flex justify-between">
+            <div class="font-merriweather font-bold text-[20px] text-[#1D2433]">Your cards</div>
+            <div class="text-[14px] font-semibold text-[#3388E0]">View all</div>
+
+        </div>
+
+        <div class="px-[16px] overflow-x-auto whitespace-nowrap scrollbar-hidden">
+            <div class="flex space-x-[16px]">
+                <cardbox [status]="'Available funds'" [total]="'290,291.98'" [currency]="'SAR'" [cardType]="'Deposit card'" [details]="'Fund deposit  ·  Adam Smith'" [icon]="'assets/bank.svg'"></cardbox>
+                <cardbox [status]="'Available funds'" [total]="'290,291.98'" [currency]="'SAR'" [cardType]="'Deposit card'" [details]="'Fund deposit  ·  Adam Smith'" [icon]="'assets/bank.svg'"></cardbox>
+                <cardbox [status]="'Available funds'" [total]="'290,291.98'" [currency]="'SAR'" [cardType]="'Deposit card'" [details]="'Fund deposit  ·  Adam Smith'" [icon]="'assets/bank.svg'"></cardbox>
+                <cardbox [status]="'Available funds'" [total]="'290,291.98'" [currency]="'SAR'" [cardType]="'Deposit card'" [details]="'Fund deposit  ·  Adam Smith'" [icon]="'assets/bank.svg'"></cardbox>
+
+            </div>
+          </div>
+          
+    </div>
+
+
+    <div class="bg-[#EEEFF2] pt-[32px] px-[16px] relative">
+
+        <div class="bg-white rounded-xl overflow-hidden mb-[-60px] relative z-10">
+          <div>
+            <img class="w-full" src="assets/car.png" alt="">
+          </div>
+          <div class="mt-[24px] bg-white flex justify-center items-center">
+            <div class="text-[18px] px-[24px] font-inter text-[#1D2433] font-semibold">
+              <div>
+                The Auto-Lease finance from Alinma Bank
+              </div>
+              <div class="text-[14px] font-inter font-normal text-[#1D2433CC] pb-[24px] pt-[8px]">
+                Get opportunity to obtain a car of your choice with the possibility of owning it at the end of the contract through easy and convenient procedures with unique features.
+              </div>
+              <div class="pb-[32px]">
+                <button class="bg-[#3388E0] w-full my-auto text-white rounded-[8px] py-[16px] px-[20px] text-[14px] font-semibold">Read more</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+
+        <div class="relative mx-[-16px]">
+          <footer [customStyle]="'h-[548px]'"></footer>
+        </div>
+      </div>
+      
+
+      <div class="h-[68px] py-[12px] px-[5px] bg-[#FFFFFF] flex justify-between" style="border-top: 1px solid #EEEFF2; box-shadow: 0px 4px 12px 0px #00000029;">
+        <div class="w-full">
+            <div class="flex justify-center">
+                <img src="assets/home.svg" alt="">
+            </div>
+            <div class="text-[12px] text-center text-[#1D2433] font-semibold font-inter mt-[4px]">
+                Home
+            </div>
+        </div>
+
+        <div class="w-full">
+            <div class="flex justify-center">
+                <img src="assets/products.svg" alt="">
+            </div>
+            <div class="text-[12px] text-center text-[#1D2433] font-semibold font-inter mt-[4px]">
+                Products
+            </div>
+        </div>
+
+        <div class="w-full">
+            <div class="flex justify-center">
+                <img src="assets/transfer.svg" alt="">
+            </div>
+            <div class="text-[12px] text-center text-[#1D2433] font-semibold font-inter mt-[4px]">
+                Transfer
+            </div>
+        </div>
+
+        <div class="w-full">
+            <div class="flex justify-center">
+                <img src="assets/services.svg" alt="">
+            </div>
+            <div class="text-[12px] text-center text-[#1D2433] font-semibold font-inter mt-[4px]">
+                Services
+            </div>
+        </div>
+
+        <div class="w-full">
+            <div class="flex justify-center">
+                <img src="assets/more.svg" alt="">
+            </div>
+            <div class="text-[12px] text-center text-[#1D2433] font-semibold font-inter mt-[4px]">
+                More
+            </div>
+        </div>
+
+      </div>
+
+</div>
+
+</div>   

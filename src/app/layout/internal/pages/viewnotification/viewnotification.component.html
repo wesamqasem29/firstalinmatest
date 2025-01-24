@@ -1,0 +1,73 @@
+<div class="w-full min-h-screen relative bg-[#EEEFF2]">
+<navbar></navbar>
+
+<div class="h-[76px] text-[14px] font-normal font-inter">
+    <div class="text-[#1D2433CC] py-[28px] px-[40px] gap-[8px] flex">
+        <span> Home </span> 
+        <svg class="my-auto" width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.35355 4.64677C5.54882 4.84203 5.54882 5.15862 5.35355 5.35388L1.02022 9.68721C0.824957 9.88247 0.508375 9.88247 0.313113 9.68721C0.117851 9.49195 0.117851 9.17537 0.313113 8.98011L4.29289 5.00033L0.313113 1.02055C0.117851 0.825283 0.117851 0.508701 0.313113 0.313439C0.508375 0.118176 0.824958 0.118176 1.02022 0.313439L5.35355 4.64677Z" fill="#1D2433" fill-opacity="0.8"/>
+        </svg>
+        <span> Pending approvals </span>
+    </div>
+</div>
+
+<div class="flex justify-center gap-x-[32px] mb-[60px]">
+     <div class="w-[22%] h-[230px] rounded-[16px] py-[24px] px-[24px] bg-[#FFFFFF]">
+        <div class="text-[20px] text-[#1D2433] font-bold font-merriweather mb-[16px]">Notifications</div>
+        <div class="font-inter text-[14px] font-semibold text-[#1D2433]">
+            <div class="p-[12px] w-full bg-[#F6F7F9] rounded-[8px]">All</div>
+            <div class="p-[12px] w-full">New</div>
+            <div class="p-[12px] w-full">Read</div>
+        </div>
+     </div>
+
+     <div class="w-[71%] p-[40px] bg-[#FFFFFF] rounded-[16px] gap-y-[24px] h-[400px]">
+        <div class="flex">
+            <div class="text-[28px] my-auto text-[#1D2433] font-bold font-merriweather mr-[16px]">Notifications</div>
+            <div class="my-auto">
+                <span class="bg-[#EEEFF2] text-[#3F444D] font-bold font-merriweather text-[20px] rounded-[5px] px-[8px] pb-[2px] items-center flex">
+                    1
+                </span> 
+            </div>
+        </div>
+        <div class="flex mt-[24px]">
+            <div class="w-full mr-[20px]">      
+                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                        </svg>
+                    </div>
+                    <input type="search" id="default-search" class="block w-full outline-none placeholder:text-[16px] px-3 h-[56px] ps-10 text-sm text-gray-900 border border-[#E6E7EA] rounded-[12px] " placeholder="Search by alias, account number, IBAN" required />
+                </div>
+            </div>
+
+            <div>
+                <button style="box-shadow: 0px 1px 1px 0px #DCDCDCB2;" class="font-semibold font-inter text-[16px] py-[18px] px-[20px] rounded-[12px] border h-[56px] flex items-center border-[#E6E7EA]">Filters</button>
+            </div>
+        </div>
+
+        <div class="w-full bg-[#FFFFFF] mt-[24px] rounded-[16px] p-[24px] h-[172px]" style="border: 1px solid #EEEFF2">
+            <div class="text-[20px] font-bold font-merriweather flex">Issue your SDB Card  • <span style="line-height: 30px; margin-left: 3px;"> #741</span> 
+            <div class="flex px-[8px] py-[4px]"><img class="my-auto" src="assets/dot.svg" alt=""><span class="font-inter pl-1 my-auto text-[14px] text-[#2D7780]">Pending</span></div>
+            </div>
+
+            <div class="text-[#71757F] text-[15px] font-inter flex">
+                <img class="mr-[4px]" src="assets/calender.svg" alt=""> 31/10/2023 
+                <span class="px-[16px]">•</span>
+                <img class="mr-[4px]" src="assets/key.svg" alt=""> Alinma Bank
+            </div>
+
+            <div class="mt-[24px]">
+                <button routerLink="/dashboard/payroll" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2; " class="bg-[#3388E0] font-semibold text-[14px] font-inter text-[#FFFFFF] py-[16px] px-[20px] rounded-[8px]">Issue SDB Card</button>
+            </div>
+        </div>
+     </div>
+</div>
+
+<div class="bottom-0 left-0 right-0">
+    <footer [customStyle]="'h-[180px]'"></footer>
+</div>
+
+</div>

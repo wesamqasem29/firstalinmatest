@@ -1,0 +1,140 @@
+<div class="sm:hidden w-full relative bg-[#0E0F11] px-8 py-[15px] text-white flex justify-between">
+  <div class="flex gap-x-16">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <img src="assets/inma.svg" alt="">
+      <div class="pl-3">
+        <div class="text-[#FFFFFF]">Alinma</div>
+        <div class="text-[#FFFFFF] mt-[-5px] font-bold">Business</div>
+      </div> 
+    </div>
+
+    <!-- Links -->
+    <div class="flex gap-x-5 items-center">
+      <div routerLink="/dashboard" class="cursor-pointer text-[14px] text-[#F6F7F9] font-semibold">Home</div>
+
+      <!-- Transfers & Payments Dropdown -->
+      <div class="dropdown group">
+        <div class="flex cursor-pointer text-[14px] text-[#F6F7F9] font-semibold items-center">
+          Transfers & Payments 
+          <img class="my-auto pl-2" src="assets/arrow.svg" alt="">
+        </div>
+        <ul class="dropdown-menu py-[16px] relative gap-x-[8px] pl-[186px] my-auto right-0 h-[92px] hover:visible  top-full w-full bg-[#0E0F11] pt-1 dropdown-menu absolute left-0  opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 ease-out flex"
+            (mouseenter)="clearDropdownTimeout()" 
+            (mouseleave)="startDropdownTimeout()">
+          <li class="my-auto">
+            <div class="py-[16px] px-[20px] text-[14px] font-inter cursor-pointer text-center text-[#FFFFFF] hover:font-bold whitespace-no-wrap hover:border-b-[2px] hover:border-[#FFFFFF]">Your Accounts</div>
+          </li>
+          <li class="my-auto">
+            <div class="py-[16px] px-[20px] text-[14px] font-inter cursor-pointer text-center text-[#FFFFFF] hover:font-bold whitespace-no-wrap hover:border-b-[2px] hover:border-[#FFFFFF]">Transfers</div>
+          </li>
+          <li class="my-auto">
+            <div class="py-[16px] px-[20px] text-[14px] font-inter cursor-pointer text-center text-[#FFFFFF] hover:font-bold whitespace-no-wrap hover:border-b-[2px] hover:border-[#FFFFFF]">Payments</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Daily Banking Dropdown -->
+      <div class="dropdown group">
+        <div class="flex cursor-pointer text-[14px] text-[#F6F7F9] font-semibold items-center">
+          Daily Banking
+          <img class="my-auto pl-2" src="assets/arrow.svg" alt="">
+        </div>
+        <ul class="dropdown-menu py-[16px] gap-x-[8px] pl-[186px] my-auto right-0 h-[92px] hover:visible  top-full w-full bg-[#0E0F11] pt-1 dropdown-menu absolute left-0  opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 ease-out flex"
+            (mouseenter)="clearDropdownTimeout()" 
+            (mouseleave)="startDropdownTimeout()">
+          <li class="my-auto">
+            <div class="py-[16px] px-[20px] text-[14px] font-inter cursor-pointer text-center text-[#FFFFFF] hover:font-bold whitespace-no-wrap hover:border-b-[2px] hover:border-[#FFFFFF]">Option One</div>
+          </li>
+          <li class="my-auto">
+            <div class="py-[16px] px-[20px] text-[14px] font-inter cursor-pointer text-center text-[#FFFFFF] hover:font-bold whitespace-no-wrap hover:border-b-[2px] hover:border-[#FFFFFF]">Option Two</div>
+          </li>
+          <li class="my-auto">
+            <div class="py-[16px] px-[20px] text-[14px] font-inter cursor-pointer text-center text-[#FFFFFF] hover:font-bold whitespace-no-wrap hover:border-b-[2px] hover:border-[#FFFFFF]">Option Three</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Funding Dropdown -->
+      <div class="dropdown group">
+        <div class="flex cursor-pointer text-[14px] text-[#F6F7F9] font-semibold items-center">
+          Funding 
+          <img class="my-auto pl-2" src="assets/arrow.svg" alt="">
+        </div>
+        <ul class="dropdown-menu py-[16px] gap-x-[8px] pl-[186px] my-auto right-0 h-[92px] hover:visible  top-full w-full bg-[#0E0F11] pt-1 dropdown-menu absolute left-0  opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 ease-out flex"
+            (mouseenter)="clearDropdownTimeout()" 
+            (mouseleave)="startDropdownTimeout()">
+          <li class="my-auto">
+            <div class="py-[16px] px-[20px] text-[14px] font-inter cursor-pointer text-center text-[#FFFFFF] hover:font-bold whitespace-no-wrap hover:border-b-[2px] hover:border-[#FFFFFF]">Option One</div>
+          </li>
+          <li class="my-auto">
+            <div class="py-[16px] px-[20px] text-[14px] font-inter cursor-pointer text-center text-[#FFFFFF] hover:font-bold whitespace-no-wrap hover:border-b-[2px] hover:border-[#FFFFFF]">Option Two</div>
+          </li>
+          <li class="my-auto">
+            <div class="py-[16px] px-[20px] text-[14px] font-inter cursor-pointer text-center text-[#FFFFFF] hover:font-bold whitespace-no-wrap hover:border-b-[2px] hover:border-[#FFFFFF]">Option Three</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="items-center flex gap-x-5">
+    <div class="flex gap-x-3">
+      <img class="w-7" src="assets/search.svg" alt="">
+      <img class="w-7" src="assets/info.svg" alt="">
+      <img class="w-7" src="assets/notification.svg" alt="">
+    </div>
+
+    <div class="border border-[#FFFFFF33] px-[16px] py-[10px] rounded-2xl flex justify-between">
+      <div>
+        <div class="font-inter text-[#FFFFFF] text-[14px]">Global Telecom Hold ...</div>
+        <div class="text-sm text-[#FFFFFF] text-[12px] opacity-[70%] font-inter">Ahmad El Sharawi</div>
+      </div>
+      <div class="flex items-center p-2">
+        <img class="my-auto pl-2" src="assets/arrow.svg" alt="">
+      </div>
+    </div>
+
+    <div>
+      <button (click)="logout()" class="bg-[#1873B4] px-[12px] py-[6px] text-white rounded-lg text-sm font-semibold">Log Out</button>
+      <div class="text-gray-600 text-center">5 min left</div>
+    </div>
+  </div>
+</div>
+  
+
+
+<style>
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #0E0F11;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.group:hover .dropdown-menu {
+  opacity: 0;
+  visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+</style>
+
+
+<div class="lg:hidden w-full bg-[#0E0F11] px-[16px] py-[8px] text-white flex justify-between">
+    <div>
+        <img class="h-[32px] w-[106px]" src="assets/alinmalogo.svg" alt="">
+    </div>
+    <div class="flex gap-x-[8px]">
+        <div class="w-[40px] h-[40px] p-[8px]"><img class="h-[24px] w-[24px]" src="assets/info.svg" alt=""></div>
+        <div class="w-[40px] h-[40px] p-[8px]"><img class="h-[24px] w-[24px]" src="assets/notification.svg" alt=""></div>
+        <div class="w-[40px] h-[40px] p-[8px]"><img class="h-[24px] w-[24px]" src="assets/profile.svg" alt=""></div>
+    </div>
+</div>  

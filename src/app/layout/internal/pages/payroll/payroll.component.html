@@ -1,0 +1,278 @@
+<div class="w-full min-h-screen relative bg-[#EEEFF2]">
+   <navbar></navbar>
+
+
+   <div class="px-[20%] py-[24px] mb-[60px]">
+
+      
+      
+        <div class="h-[100px]">
+          <div routerLink="/dashboard"  class="flex py-[4px] cursor-pointer gap-x-[8px] h-[28px]">
+            <div class="h-[20px] flex items-center w-[20px] my-auto">
+               <img src="assets/back.svg" alt="">
+            </div>
+            <div class="text-[16px] text-center my-auto flex items-center font-semibold font-inter text-[#3388E0]">
+               <div>
+                  Back to cards dashboard</div>
+               </div>
+          </div>
+    
+          <div class="font-bold pt-[24px] h-[48px] text-[40px] font-merriweather text-[#1D2433]">
+            Issue SDB cards
+          </div>
+        </div>
+
+      <!-- *************************** first content start *************************** -->
+        <div *ngIf="enableFirst">
+         <form [formGroup]="firstpayrollForm">    
+            <div class="w-full bg-[#FFFFFF] mt-[24px] p-[40px] rounded-[12px]" style="border: 1px solid #E6E7EA">
+
+
+
+               <div class="w-1/2 mt-[24px]">
+                  <ol class="flex items-center w-full text-xs text-gray-900 font-medium sm:text-base gap-x-9">
+                  <li class="flex w-full relative text-[#3388E0] after:content-[''] after:w-full after:h-0.5 after:bg-[#3388E0] after:inline-block after:absolute lg:after:top-5 after:top-3 after:left-10">
+                     <div class="block justify-start whitespace-nowrap text-start z-10 text-[12px] text-[#1D2433]">
+                        <div class="w-6 h-6 bg-[#3388E0] border-2 border-transparent rounded-full flex justify-center items-center mb-3 text-sm text-white lg:w-10 lg:h-10 font-inter">1</div>
+                        <div>Card Details</div>
+                     </div>
+                  </li>
+                  <li class="flex w-full relative text-gray-900 after:content-[''] after:w-full after:h-0.5 after:bg-[#3388E0] after:inline-block after:absolute lg:after:top-5 after:top-3 after:left-11">
+                     <div class="block whitespace-nowrap z-10 text-[12px] text-[#A2A6AE]">
+                        <span class="w-6 h-6 bg-[#FFFFFF] border-2 border-[#A2A6AE] rounded-full flex justify-center items-center mx-auto mb-3 text-sm text-[#A2A6AE] lg:w-10 lg:h-10 font-inter">2</span>
+                        <div>Set a PIN</div>
+                     </div>
+                  </li>
+                  <li class="flex w-full relative text-gray-900">
+                     <div class="block whitespace-nowrap z-10 text-[12px] text-[#A2A6AE]">
+                        <span class="w-6 h-6 bg-[#FFFFFF] border-2 border-[#A2A6AE] rounded-full flex justify-center ml-2 items-center mb-3 text-sm text-[#A2A6AE] lg:w-10 lg:h-10 font-inter">3</span>
+                        <div>Confirmed</div>
+                     </div>
+                  </li>
+                  </ol>
+               </div>
+               
+
+
+
+               <div class="mt-[16px] text-[#0e0e0f]">
+                  <div class="text-[18px] font-inter font-semibold">Select associated card account</div>
+                  <div class="relative w-1/2">
+                  <button
+                     type="button"
+                     (click)="toggleDropdown()"
+                     class="w-full flex justify-between bg-[#FFFFFF] rounded-[12px] mt-[8px] px-[20px] h-[56px] items-center"
+                     [ngClass]="{'border': true, 'border-[#E6E7EA]': true, 'shadow-sm': true, 'z-20': true}">
+                     <span class="font-inter font-normal text-[16px] text-[#71757F]">
+                        {{ selectedOption || 'Select account' }}
+                     </span>
+                     <svg class="ml-2" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M8.53033 8.53033C8.23744 8.82322 7.76256 8.82322 7.46967 8.53033L0.96967 2.03033C0.676777 1.73744 0.676777 1.26256 0.96967 0.96967C1.26256 0.676777 1.73744 0.676777 2.03033 0.96967L8 6.93934L13.9697 0.96967C14.2626 0.676777 14.7374 0.676777 15.0303 0.96967C15.3232 1.26256 15.3232 1.73744 15.0303 2.03033L8.53033 8.53033Z"
+                        fill="#1D2433"
+                        fill-opacity="0.8" />
+                     </svg>
+                  </button>
+                  <ul
+                     *ngIf="isDropdownOpen"
+                     class="absolute w-full bg-[#FFFFFF] rounded-[12px] mt-[8px] shadow-lg z-30"
+                     [ngClass]="{'border': true, 'border-[#E6E7EA]': true}">
+                     <li
+                        *ngFor="let option of options"
+                        (click)="selectOption(option)"
+                        class="px-[20px] py-[12px] cursor-pointer font-inter font-normal text-[16px] text-[#71757F] hover:bg-gray-100">
+                        {{ option }}
+                     </li>
+                  </ul>
+                  </div>
+               </div>
+         
+               <div class="font-inter mt-[40px] font-semibold text-[18px]">Card Activation</div>
+               <label class="inline-flex items-center mt-[24px] cursor-pointer">
+                  <input type="checkbox" formControlName="cardActivation" class="sr-only peer">
+                  <div class="relative w-7 h-4 bg-[#71757F] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                  <span class="ms-3 text-[16px] font-normal text-[#1D2433] dark:text-gray-300">Activate the card upon issuance</span>
+               </label>
+         
+               <div class="mt-[40px] pt-[16px] px-[16px] pb-[24px] bg-[#F6F7F9] rounded-[12px]">
+                  <div class="font-semibold font-inter text-[18px]">Terms and conditions</div>
+                  <div class="mt-[16px]">
+                  <div class="flex items-center">
+                     <input
+                        id="default-checkbox"
+                        type="checkbox"
+                        formControlName="termsAndConditions"
+                        class="w-[18px] h-[18px] text-blue-600 bg-gray-100 border-[#1D2433CC] rounded focus:ring-blue-500">
+                     <label
+                        for="default-checkbox"
+                        class="ms-2 text-sm font-medium text-[#1D2433] font-inter dark:text-gray-300 text-[16px]">
+                        I have read, understood, and agree to the <span class="font-bold">Terms and Conditions</span>
+                     </label>
+                  </div>
+                  </div>
+               </div>
+               <!-- fill="#1D2433" [fill]="checkDone()" -->
+               <div class="mt-[40px]">
+                  <button type="submit" (click)="firstSubmit()" [disabled]="checkDone()" class="disabled:bg-[#EEEFF2] bg-[#3388E0] text-[#FFFFFF] py-[18px] px-6 rounded-[12px] flex gap-x-[8px] disabled:text-[#A2A6AE]">
+                  Next: Set Card PIN
+                  <span class="my-auto" *ngIf="checkDone()"><img class="my-auto" src="assets/resume.svg" alt=""></span>
+                  <span class="my-auto" *ngIf="!checkDone()">
+                     <svg class="my-auto" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="fill-[#FFFFFF]" fill-rule="evenodd" clip-rule="evenodd" d="M7.18306 0.933058C7.42714 0.688981 7.82286 0.688981 8.06694 0.933058L13.6919 6.55806C13.936 6.80214 13.936 7.19786 13.6919 7.44194L8.06694 13.0669C7.82286 13.311 7.42714 13.311 7.18306 13.0669C6.93898 12.8229 6.93898 12.4271 7.18306 12.1831L11.7411 7.625L0.75 7.625C0.404822 7.625 0.125 7.34518 0.125 7C0.125 6.65482 0.404822 6.375 0.75 6.375L11.7411 6.375L7.18306 1.81694C6.93898 1.57286 6.93898 1.17714 7.18306 0.933058Z" fill-opacity="0.65"/>
+                        </svg>
+                        
+                  </span>
+                  </button>
+               </div>
+            </div>
+        </form>
+        </div>
+      <!-- *************************** first content end *************************** -->
+
+
+
+
+      <!-- *************************** second content start *************************** -->
+
+      <div *ngIf="enableSecond" class="w-full bg-[#FFFFFF] mt-[24px] p-[40px] rounded-[12px]" style="border: 1px solid #E6E7EA">
+
+         <div class="w-1/2 mt-[24px]">
+            <ol class="flex items-center w-full text-xs text-gray-900 font-medium sm:text-base gap-x-9">
+            <li class="flex w-full relative text-[#3388E0] after:content-[''] after:w-full after:h-0.5 after:bg-[#288608] after:inline-block after:absolute lg:after:top-5 after:top-3 after:left-10">
+               <div class="block justify-start whitespace-nowrap text-start z-10 text-[12px] text-[#A2A6AE]">
+                  <div class="w-6 h-6 bg-[#288608] border-2 border-[#A2A6AE] border-transparent rounded-full flex justify-center items-center mb-3 text-sm text-[#A2A6AE] lg:w-10 lg:h-10 font-inter"><img class="my-auto" src="assets/nike.svg" alt=""></div>
+                  <div>Card Details</div>
+               </div>
+            </li>
+            <li class="flex w-full relative text-[#3388E0] after:content-[''] after:w-full after:h-0.5 after:bg-[#3388E0] after:inline-block after:absolute lg:after:top-5 after:top-3 after:left-11">
+               <div class="block whitespace-nowrap z-10 text-[12px]  text-[#1D2433]">
+                  <span class="w-6 h-6  bg-[#3388E0] border-2  rounded-full flex border-transparent justify-center items-center mx-auto mb-3 text-sm text-[#FFFFFF] lg:w-10 lg:h-10 font-inter">2</span>
+                  <div>Set a PIN</div>
+               </div>
+            </li>
+            <li class="flex w-full relative text-gray-900">
+               <div class="block whitespace-nowrap z-10 text-[12px] text-[#A2A6AE]">
+                  <span class="w-6 h-6 bg-[#FFFFFF] border-2 border-[#A2A6AE] rounded-full flex justify-center ml-2 items-center mb-3 text-sm text-[#A2A6AE] lg:w-10 lg:h-10 font-inter">3</span>
+                  <div>Confirmed</div>
+               </div>
+            </li>
+            </ol>
+         </div>
+         
+         <div class="text-[18px] text-[#1D2433] font-semibold font-inter mt-[40px]">Set the card PIN code</div>
+         <div class="text-[14px] text-[#1D2433] font-inter mt-[40px]">Enter Card PIN</div>
+
+         <div class="flex mt-[8px]">
+            <input
+              *ngFor="let box of otpBoxes; let i = index"
+              [type]="inputType()"
+              style="border: 1px solid #E6E7EA"
+              [ngClass]="i==0?'rounded-l-[12px]':i==3?'rounded-r-[12px]':''"
+              class="h-[56px] text-center text-[24px] font-semibold font-inter text-slate-900 bg-[#FFFFFF] w-[71.5px] hover:border-slate-200 p-4 focus:bg-white focus:border-indigo-400"
+              maxlength="1"
+              [(ngModel)]="otp[i]"
+              [name]="'otp-' + i"
+              (input)="handleInput($event, i)"
+              (keydown)="handleKeyDown($event, i)"
+              (focus)="handleFocus($event)"
+              (paste)="handlePaste($event)"
+            />
+          </div>
+
+          <div (click)="hide()" [ngClass]="!checkOtp()?'text-[#3388E0] flex':'text-[#71757F80]'" class=" cursor-pointer text-[14px] font-inter mt-[8px]"><img *ngIf="!checkOtp()" class="my-auto mr-[8px]" src="assets/hideotp.svg" alt=""> Hide PIN Code</div>
+          
+          <div class="mt-[40px]">
+            <button type="submit" (click)="secondSubmit()" [disabled]="checkOtp()" class="disabled:bg-[#EEEFF2] bg-[#3388E0] text-[#FFFFFF] py-[18px] px-6 rounded-[12px] flex gap-x-[8px] disabled:text-[#A2A6AE]">
+               Next: Summary
+            <span class="my-auto" *ngIf="checkOtp()"><img class="my-auto" src="assets/resume.svg" alt=""></span>
+            <span class="my-auto" *ngIf="!checkOtp()">
+               <svg class="my-auto" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="fill-[#FFFFFF]" fill-rule="evenodd" clip-rule="evenodd" d="M7.18306 0.933058C7.42714 0.688981 7.82286 0.688981 8.06694 0.933058L13.6919 6.55806C13.936 6.80214 13.936 7.19786 13.6919 7.44194L8.06694 13.0669C7.82286 13.311 7.42714 13.311 7.18306 13.0669C6.93898 12.8229 6.93898 12.4271 7.18306 12.1831L11.7411 7.625L0.75 7.625C0.404822 7.625 0.125 7.34518 0.125 7C0.125 6.65482 0.404822 6.375 0.75 6.375L11.7411 6.375L7.18306 1.81694C6.93898 1.57286 6.93898 1.17714 7.18306 0.933058Z" fill-opacity="0.65"/>
+                  </svg>
+                  
+            </span>
+            </button>
+         </div>
+          
+      </div>
+
+      <!-- *************************** second content end *************************** -->
+
+
+
+
+       <!-- *************************** second content start *************************** -->
+         <div *ngIf="enableThird" class="w-full bg-[#FFFFFF] mt-[24px] p-[40px] rounded-[12px]" style="border: 1px solid #E6E7EA">
+            
+            <div class="flex">
+               <img class="my-auto" src="assets/success.svg" alt="">
+               <div class="text-[#288608] pl-[8px] font-merriweather text-[15px] font-bold">Card Issuance is Successful </div>
+            </div>
+
+            <div class="mt-[24px] font-inter text-[#1D2433] text-[24px] font-semibold">
+               SDB Card issuing has been successfully completed
+            </div>
+
+            <div class="mt-[24px] font-inter text-[#71757F] text-[14px]">
+               Card Name
+               <div class="text-[#1D2433] text-[16px] mt-[4px] font-normal">Travel Card</div>
+            </div>
+
+            <div class="mt-[24px] font-inter text-[#71757F] text-[14px]">
+               Card Holder
+               <div class="text-[#1D2433] text-[16px] mt-[4px] font-normal">Jason Green</div>
+            </div>
+
+            <div class="mt-[24px] font-inter text-[#71757F] text-[14px]">
+               Card number
+               <div class="text-[#1D2433] text-[16px] mt-[4px] font-normal">3455 45****** 3507</div>
+            </div>
+
+            <div class="mt-[24px] font-inter text-[#71757F] text-[14px]">
+               Amount debited
+               <div class="text-[#1D2433] text-[16px] mt-[4px] font-normal">20,050.00 SAR</div>
+            </div>
+
+            <div class="mt-[24px] font-inter text-[#71757F] text-[14px]">
+               Call received on trusted device:
+               <div class="text-[#1D2433] text-[16px] mt-[4px] font-normal">iOS +966 56 *** 1928</div>
+            </div>
+
+
+            <div class="mt-[40px] flex">
+               <button routerLink="/dashboard" class="disabled:bg-[#EEEFF2] bg-[#3388E0] text-[#FFFFFF] py-[18px] px-6 rounded-[12px] flex gap-x-[8px] disabled:text-[#A2A6AE]">
+                  Go to dashboard
+               <span class="my-auto">
+                  <svg class="my-auto" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path class="fill-[#FFFFFF]" fill-rule="evenodd" clip-rule="evenodd" d="M7.18306 0.933058C7.42714 0.688981 7.82286 0.688981 8.06694 0.933058L13.6919 6.55806C13.936 6.80214 13.936 7.19786 13.6919 7.44194L8.06694 13.0669C7.82286 13.311 7.42714 13.311 7.18306 13.0669C6.93898 12.8229 6.93898 12.4271 7.18306 12.1831L11.7411 7.625L0.75 7.625C0.404822 7.625 0.125 7.34518 0.125 7C0.125 6.65482 0.404822 6.375 0.75 6.375L11.7411 6.375L7.18306 1.81694C6.93898 1.57286 6.93898 1.17714 7.18306 0.933058Z" fill-opacity="0.65"/>
+                     </svg>
+               </span>
+               </button>
+
+               <button style="border: 1px solid #E6E7EA; box-shadow: 0px 1px 1px 0px #DCDCDCB2; background: linear-gradient(180deg, #FFFFFF 48.44%, #F5F4F4 100%);" (click)="secondSubmit()" class="ml-[16px] text-[#1D2433] py-[18px] px-6 rounded-[12px] flex gap-x-[8px] disabled:text-[#A2A6AE]">
+                  Go to Card Details
+               <span class="my-auto">
+                  <svg class="my-auto" width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0.25 2.625C0.25 1.24429 1.36929 0.125 2.75 0.125H15.25C16.6307 0.125 17.75 1.24429 17.75 2.625V11.375C17.75 12.7557 16.6307 13.875 15.25 13.875H2.75C1.36929 13.875 0.25 12.7557 0.25 11.375V2.625ZM1.5 5.125V11.375C1.5 12.0654 2.05964 12.625 2.75 12.625H15.25C15.9404 12.625 16.5 12.0654 16.5 11.375V5.125H1.5ZM16.5 3.25H1.5V2.625C1.5 1.93464 2.05964 1.375 2.75 1.375H15.25C15.9404 1.375 16.5 1.93464 16.5 2.625V3.25ZM2.75 8.875C2.75 8.52982 3.02982 8.25 3.375 8.25H8.375C8.72018 8.25 9 8.52982 9 8.875C9 9.22018 8.72018 9.5 8.375 9.5H3.375C3.02982 9.5 2.75 9.22018 2.75 8.875ZM2.75 10.75C2.75 10.4048 3.02982 10.125 3.375 10.125H5.875C6.22018 10.125 6.5 10.4048 6.5 10.75C6.5 11.0952 6.22018 11.375 5.875 11.375H3.375C3.02982 11.375 2.75 11.0952 2.75 10.75Z" fill="#1D2433" fill-opacity="0.8"/>
+                     </svg>
+                     
+               </span>
+               </button>
+
+            </div>
+
+         </div>
+
+
+    </div>
+
+
+
+    
+     
+   <div>
+    <footer [customStyle]="'h-[180px]'"></footer>
+</div>
+</div>

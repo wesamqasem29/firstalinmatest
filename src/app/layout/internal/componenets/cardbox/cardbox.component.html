@@ -1,0 +1,57 @@
+<div *ngIf="!isSkelton" class="sm:hidden relative border border-[#EEEFF2] h-[182px] bg-[#FFFFFF] rounded-[12px] p-7 flex flex-col" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2;">
+    <img class="absolute right-0" style=" width: 233.96px; height: 136.33px; gap: 0px; border: 1px 0px 0px 0px; opacity: 0.3px; rotate: -28.38 deg;" src="assets/victor.svg" alt="">
+    <div class="mb-5">
+        <div class="text-[13px] text-[#71757F]">{{cardType}}</div>
+        <div class="text-[#3388E0] font-bold text-[15px] font-[Merriweather]">{{details}}</div>
+      </div>
+      <div class="flex gap-x-3 pt-1">
+        <div class="px-[16px] py-[12px] bg-[#EEEFF2] rounded-[16px]">
+            <img class="" [src]="icon" alt="">
+        </div>
+        <div class="my-auto"> 
+            <div class="text-[13px] text-[#71757F]">{{status}}</div>
+            <div class="font-semibold mt-[-5px] text-[24px]">{{total}} {{currency}}</div>
+        </div>
+
+        <!-- <div class="font-semibold mt-[-5px] text-[24px]">14,500<span class="text-[18px]">.35</span> {{currency}}</div> -->
+
+    </div>
+</div>
+
+
+
+<div *ngIf="isSkelton" class="sm:hidden relative border border-[#EEEFF2] h-[182px] bg-[#FFFFFF] rounded-[12px] p-7 flex flex-col animate-pulse" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2;">
+    <img class="absolute right-0" style=" width: 233.96px; height: 136.33px; gap: 0px; border: 1px 0px 0px 0px; opacity: 0.3px; rotate: -28.38 deg;" src="assets/victor.svg" alt="">
+    <div class="mb-5">
+        <div class="h-[13px] bg-gray-200 rounded-md w-1/4 mb-2"></div>
+        <div class="h-[15px] bg-gray-200 rounded-md w-1/2"></div>
+    </div>
+    <div class="flex gap-x-3 items-center pt-1">
+        <div class="bg-gray-200 rounded-[16px] w-[48px] h-[48px] flex-shrink-0"></div>
+        <div class="flex flex-col gap-1">
+            <div class="h-[13px] bg-gray-200 rounded-md w-[200px]"></div>
+            <div class="h-[24px] bg-gray-200 rounded-md w-[200px]"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<div *ngIf="!isSkelton" class="lg:hidden relative border border-[#EEEFF2] h-[148px] w-[280px] bg-[#FFFFFF] rounded-[12px] p-[16px] flex flex-col" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2;">
+    <div class="">
+        <div class="text-[12px] text-[#71757F]">{{cardType}}</div>
+        <div class="text-[#3388E0] font-bold text-[15px] font-merriweather">{{details}}</div>
+      </div>
+      <div class="flex gap-x-3 pt-[12px]">
+        <div class="">
+            <img class="h-[40px] rounded-[12px] bg-[#EEEFF2] p-1" [src]="icon" alt="">
+        </div>
+        <div class="my-auto h-[40px]"> 
+            <div class="text-[12px] font-inter text-[#71757F]">{{status}}</div>
+            <div class="font-semibold text-[15px]">{{total}} {{currency}}</div>
+        </div>
+
+        <!-- <div class="font-semibold mt-[-5px] text-[24px]">14,500<span class="text-[18px]">.35</span> {{currency}}</div> -->
+
+    </div>
+</div>

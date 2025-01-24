@@ -1,0 +1,37 @@
+<svg width="44" height="46" viewBox="0 0 44 46" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g filter="url(#filter0_dddd_49_1594)">
+<rect width="30" height="22" rx="4" transform="matrix(-1 0 0 1 37 2)" fill="url(#pattern0_49_1594)"/>
+<rect opacity="0.2" x="10.5664" y="12.9565" width="8.55598" height="3.13059" rx="1" fill="black"/>
+<rect opacity="0.2" x="10.5664" y="17.1738" width="16.2564" height="3.13059" rx="1" fill="black"/>
+</g>
+<defs>
+<filter id="filter0_dddd_49_1594" x="0.806774" y="0.856635" width="42.3865" height="44.772" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="0.952804"/>
+<feGaussianBlur stdDeviation="1.04808"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_49_1594"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="3.81122"/>
+<feGaussianBlur stdDeviation="1.90561"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0"/>
+<feBlend mode="normal" in2="effect1_dropShadow_49_1594" result="effect2_dropShadow_49_1594"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="8.67052"/>
+<feGaussianBlur stdDeviation="2.62021"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+<feBlend mode="normal" in2="effect2_dropShadow_49_1594" result="effect3_dropShadow_49_1594"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="15.4354"/>
+<feGaussianBlur stdDeviation="3.09661"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.01 0"/>
+<feBlend mode="normal" in2="effect3_dropShadow_49_1594" result="effect4_dropShadow_49_1594"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect4_dropShadow_49_1594" result="shape"/>
+</filter>
+<pattern id="pattern0_49_1594" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_49_1594" transform="matrix(0.052381 0 0 0.0714286 -0.0761905 0)"/>
+</pattern>
+<image id="image0_49_1594" width="22" height="14" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAOCAMAAAAc7xz/AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAADPUExURZzAwpu/wZ7Bw6XFx6DCxJq+wLfR09vo6djm58LY2Zq+wZm+wL/W197q6s3f4JS6vY61uY+3urXP0dXk5dbk5Zi8v4qyt4ewtZzAwZ3Awp/CxJi9v461uo20uZG3u8ve39Tj5LjS06/MzrDNzqjHyZq/wZO4vJS5vaHDxeTu7rzU1qzKzJq9wJi7v5e7v6rJy63LzKTFx6XFyKLDxZ/Aw5y+waLDxp/BxKHCxKTEx6PExqTExrHNz8PY2sLY2sHX2K7LzanIyrvU1cDX2P///znVh2cAAAABYktHRET5tJjBAAAAB3RJTUUH5wwFDCY03ssSXAAAAmR6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADjLlVVbttsgDPzXKroEkIQEy3GC+es5/ezyOwLncZ3cNjUnsY2EZjQSmH7//EU/4qpZSa4yvHqybGIXK66cjK2YW7NdOvM+LpfLYMZ8M42Z4lK0S9LuSQW+1Rpp9c2xsIhvuhc13BFQBIuYZcjOSa5eZfNqWGg9wCxzine72u4SNgoEsFEbwUO2Zbi7TyaPMJi7xAq9r+BUqvaSiIPc8DkljXfJ3MEnYQBVfM0JnISlSsPwGHyFlSV+wkMSieHGUrjHlGyCHPGPpZxOg480GWxMtsKqarcU6chxGSPN6oqRZENaw+fFu8OJ98ncAZwnsxZMhCcRJu4rCO7iqFMo4xXpAQD2EwtQQMlQELY2FWtQCh7OtBwgNwMPAgerJfBzTULoV74TbF+loqn8jh4a1pFKBZ8U5CFxutXsHFI7uugUlr7G/XtYBOxvgotrQWrlncifB48md+iFQDwKTwlDI8aCEu+QX27YEV5D4IIgGrUrATDs+mhOOrozYb+M6STzKc12AxOUPXG9tR4Kn/FUwbDDFjMtPCQTGrAev8xtNh5afm7h1QwzNCx3dlPqTcMq0SwWaRfSprPkywlIbe7xLfgArSpaXDN8qmKLYE+DkxaM2DYMa8ZTFcEWEdGY0rmQX5BDDfES2zgYvgDrAqYTcvkX8ivw6n06oZfZ/AZ0vOA5Sp5Wp8xG2eykzY0hvWiTwQxRYm3U51OG9EWbZ+QPtblJQ4c28v/a8HEMcxwuSt8fDs9uj4PsPns6xcnyMr35liCl9dVwXp8B+gO71nrhtkR9ugAAAKRJREFUGNNlkNcSgkAMRbMSBBQVuyw2VBA7KPaO//9PLuC4KOchd+Y8ZG4CQP7JCAJCSotZSVZ+dC4cebUgFbkWS1o5ykq1pnJdbzQ1Fi3QkepcG+1OlxDs9c3BcATEiiGGbY8JceSJYk5ngPQDzhdLYsHKFby1A2xNzMbf7hCR7inSRG/n4B+/VRP6dPZiwxzXyE4O83K93R+p48VnELzc9E8i3pYlDgb6PVqzAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIzLTEyLTA1VDEyOjM4OjIyKzAwOjAw/LJPjwAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMy0xMi0wNVQxMjozODoyMiswMDowMI3v9zMAAAAodEVYdGRhdGU6dGltZXN0YW1wADIwMjMtMTItMDVUMTI6Mzg6NTIrMDA6MDDQP9/1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAABJRU5ErkJggg=="/>
+</defs>
+</svg>

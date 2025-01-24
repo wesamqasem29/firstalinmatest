@@ -1,0 +1,58 @@
+<div *ngIf="!isSkelton" class="bg-white rounded-[16px] p-[24px] flex flex-col h-[144px] border border-[#EEEFF2]" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2;">
+    <div class="flex  justify-between">
+        <div class="flex gap-x-3">
+            <img class="" [src]="icon" alt="">
+            <div class="my-auto"> 
+                <div class="text-[#1D2433] text-[20px] font-[Merriweather] font-bold">{{name}}</div>
+                <div class="text-[15px] text-[#71757F]">{{details}}</div>
+            </div>
+        </div>
+        <div>
+            <div class="text-[14px] font-semibold text-[#2D7780] flex text-end justify-end"><img src="assets/dot.svg" alt=""><span class="my-auto ml-1"> Due</span> </div>
+            <div class="text-[18px] font-semibold text-[#1D2433]">{{total}} {{currency}}</div>
+        </div>
+    </div>
+    <div class="pl-[8%] flex gap-x-3 mt-4">
+        <div class="flex text-[14px] text-[#3388E0] gap-x-1 font-semibold my-auto">
+            <img class="my-auto" src="assets/money.svg" alt="">
+            <span class="my-auto">
+                Pay bill
+            </span>
+        </div>
+        <div class="flex text-[14px] text-[#3388E0] gap-x-1 font-semibold my-auto">
+            <img class="my-auto" src="assets/eye.svg" alt="">
+            <span class="my-auto">
+                Details
+            </span>
+        </div>
+    </div>   
+</div>
+
+
+
+<div *ngIf="isSkelton" class="bg-white rounded-[16px] p-[24px] flex flex-col h-[144px] border border-[#EEEFF2] animate-pulse" style="box-shadow: 0px 1px 1px 0px #DCDCDCB2;">
+    <div class="flex justify-between">
+        <div class="flex gap-x-3">
+            <div class="w-12 h-12 bg-gray-200 rounded-md"></div>
+            <div class="my-auto">
+                <div class="h-[20px] bg-gray-200 rounded-md w-[300px] mb-2"></div>
+                <div class="h-[15px] bg-gray-200 rounded-md w-[250px]"></div>
+            </div>
+        </div>
+        <div>
+            <div class="h-[14px] bg-gray-200 rounded-md w-[80px] mb-2"></div>
+            <div class="h-[18px] bg-gray-200 rounded-md w-[80px]"></div>
+        </div>
+    </div>
+
+    <div class="pl-[8%] flex gap-x-3 mt-4">
+        <div class="flex gap-x-1">
+            <div class="w-4 h-4 bg-gray-200 rounded-full"></div>
+            <div class="h-[14px] bg-gray-200 rounded-md w-[60px]"></div>
+        </div>
+        <div class="flex gap-x-1">
+            <div class="w-4 h-4 bg-gray-200 rounded-full"></div>
+            <div class="h-[14px] bg-gray-200 rounded-md w-[60px]"></div>
+        </div>
+    </div>
+</div>
